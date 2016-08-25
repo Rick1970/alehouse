@@ -1,5 +1,5 @@
 import { Component, EventEmitter } from 'angular2/core';
-import { Keg } from './keg.model.ts';
+import { Keg } from './keg.model';
 import { KegComponent } from './keg.component';
 import { EditKegDetailsComponent} from './edit-keg-details.component';
 import { NewKegComponent } from './new-keg.component';
@@ -15,7 +15,7 @@ import { NewKegComponent } from './new-keg.component';
   </keg-display>
   <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
   </edit-keg-details>
-  <new-keg></new-keg>
+  <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   `
 })
 export class KegListComponent {
@@ -29,5 +29,10 @@ export class KegListComponent {
     console.log('child', clickedKeg);
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
+  }
+  createKeg(keg): void {
+    this.kegList.push(
+      new Keg(keg.userDescription, keg.userPrice, keg.userContent, keg.userPints)
+    )
   }
 }

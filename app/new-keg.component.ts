@@ -20,15 +20,15 @@ import {Keg} from './keg.model';
   `
 })
 export class NewKegComponent {
-  public onSubmitNewKeg: EventEmitter<Keg>;
+  public onSubmitNewKeg: EventEmitter<Object>;
   constructor(){
     this.onSubmitNewKeg = new EventEmitter();
   }
   addKeg(userDescription: HTMLInputElement, userPrice: HTMLInputElement, userContent: HTMLInputElement, userPints: HTMLInputElement){
-    console.log(userDescription.value, userPrice.value, userContent.value, userPints.value);
+    this.onSubmitNewKeg.emit({userDescription: userDescription.value, userPrice: userPrice.value, userContent: userContent.value, userPints:userPints.value});
     userDescription.value = "";
     userPrice.value = "";
     userContent.value = "";
-    userPints.value;
+    userPints.value = "";
   }
 }

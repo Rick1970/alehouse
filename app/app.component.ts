@@ -22,10 +22,10 @@ export class AppComponent {
   public kegs: Keg [] ;
   constructor(){
     this.kegs = [
-      new Keg("Coors", "$150.00", "6.8%", 124),
-      new Keg("Budweiser", "$150.00", "6.8%", 124),
-      new Keg("Bud Light", "$140.00", "5.8%", 124),
-      new Keg("Pyraimid", "$117.00", "7.6%", 124)
+      new Keg("Coors", "$150.00", "6.8%", "124"),
+      new Keg("Budweiser", "$150.00", "6.8%", "124"),
+      new Keg("Bud Light", "$140.00", "5.8%", "124"),
+      new Keg("Pyraimid", "$117.00", "7.6%", "124")
     ];
   }
 
