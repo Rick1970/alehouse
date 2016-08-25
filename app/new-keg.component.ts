@@ -7,8 +7,15 @@ import {Keg} from './keg.model';
   template: `
   <div class="keg-form">
   <h3>Create Keg:</h3>
-  <input placeholder="Description" class="col-sm-8 input-lg"#newDescription>
-  <button (click)="addKeg(newDescription)">Add</button>
+  <h4>Enter Description:</h4>
+  <input placeholder="Description" class="input-lg"#newDescription>
+  <h4>Enter Price:</h4>
+  <input placeholder="Price" class="input-lg"#newPrice>
+  <h4>Enter Alc. Content:</h4>
+  <input placeholder="Alc. Content" class="input-lg"#newContent>
+  <h4>Enter Pint Qty.</h4>
+  <input placeholder="Pint Qty" class="input-lg"#newPints>
+  <button (click)="addKeg(newDescription, newPrice, newContent, newPints)">Add</button>
 </div>
   `
 })
@@ -17,8 +24,11 @@ export class NewKegComponent {
   constructor(){
     this.onSubmitNewKeg = new EventEmitter();
   }
-  addKeg(userDescription: HTMLInputElement){
-    console.log(userDescription.value);
+  addKeg(userDescription: HTMLInputElement, userPrice: HTMLInputElement, userContent: HTMLInputElement, userPints: HTMLInputElement){
+    console.log(userDescription.value, userPrice.value, userContent.value, userPints.value);
     userDescription.value = "";
+    userPrice.value = "";
+    userContent.value = "";
+    userPints.value;
   }
 }
