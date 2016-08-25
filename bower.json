@@ -6,7 +6,7 @@
     "Rick1970 <rthornbrug@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/Rick1970/alehouse",
   "ignore": [
     "**/.*",
     "node_modules",
